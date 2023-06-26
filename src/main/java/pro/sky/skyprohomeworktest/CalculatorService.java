@@ -1,5 +1,6 @@
 package pro.sky.skyprohomeworktest;
 
+import ch.qos.logback.core.joran.conditional.IfAction;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -22,6 +23,9 @@ public class CalculatorService {
     }
 
     public Integer divide(Integer num1, Integer num2) {
+        if (num2 == 0) {
+            throw new ArithmeticException();
+        }
         return num1 / num2;
     }
 
